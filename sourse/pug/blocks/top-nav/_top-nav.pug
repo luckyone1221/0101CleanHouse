@@ -1,32 +1,44 @@
 mixin menu-toggle()
 	+b.toggle-menu-mobile--js
 		span
+
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
-	+b.menu-mobile--js
-		+b.toggle-menu-mobile--js
-			span
+	+b.menu-mobile--js.d-xl-none
 		+e.inner
+			+b.logo(href="/")
+				img(loading="lazy" src="img/svg/logo.svg" alt="")
+				+e.txt Clean House
 			+mnu()
+			+soc()
+			+e.mail(href="mailto:clean_house@gmail.com") clean_house@gmail.com
+			+e.tel(href="tel:+380632774550") +380 63 277-45-50
+			+e.btn.default-btn-js(href="#")
+				span Зворотній дзвінок
+				+icon('tell')
 	//  мобильное меню
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col-auto.d-lg-none
-					+menu-toggle()
+			+e.row.row.align-items-center
 				.col
-					.menu-mobile.menu-mobile--js
-						+menu-toggle()
-						+mnu()
-					
+					+b.logo(href="/")
+						img(loading="lazy" src="img/svg/logo.svg" alt="")
+						+e.txt Clean House
+				.col-auto.d-none.d-xl-block
+					+mnu()
+				.col-auto
+					+soc()
+				.col-auto.d-none.d-md-block
+					.row.gx-3.align-items-center
+						.col-auto.text-end
+							+e.mail.default-btn-js(href="mailto:clean_house@gmail.com") clean_house@gmail.com
+							+e.tel.default-btn-js(href="tel:+380632774550") +380 63 277-45-50
+						.col-auto
+							+e.btn.default-btn-js(href="#")
+								span Зворотній дзвінок
+								+icon('tell')
+				.col-auto.d-xl-none
+					+menu-toggle()
 	// end top-nav

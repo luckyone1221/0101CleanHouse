@@ -15,14 +15,14 @@
 	//- 	}
 //- WP menu
 mixin mnu()
-	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+	ul.menu
 		each linkPatch, linkName in nav
-			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
+			li.menu-item: a(href=linkPatch)=linkName
 		if subnav
 			li.menu-item.menu-item-has-children
-				a(href="#" itemprop="url") О нас
+				a(href="#") О нас
 				ul.sub-menu
 					each sublinkPatch, sublinkName in subnav
-						li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
+						li.menu-item: a(href=sublinkPatch)= sublinkName
 
 //- menu

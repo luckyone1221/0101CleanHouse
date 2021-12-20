@@ -1,29 +1,25 @@
+// start .header
+.header {
+	position: fixed;
+	//-position: absolute;
 
-	// start .header
-	.header {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	z-index: 900;
+	top: 0;
+	left: 0;
+	width: 100%;
 
+
+	transition: color 0s ease-in-out, all .3s ease-in-out;
+	border-bottom: 1px solid transparent;
+	color: $white;
+	--menu-col: #{rgba($white, .9)};
+	--color: #{$white};
+	&.fixed{
+		--color: #{$primary};
+		--menu-col: #{rgba($body-color, .95)};
+		background-color: $white;
+		color: $body-color;
+		border-bottom: 1px solid $gray-400;
+		box-shadow: 0 0 10px 1px rgba($black, .3);
+	}
 } // end.header

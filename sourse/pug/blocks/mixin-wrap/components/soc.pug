@@ -1,17 +1,18 @@
 mixin item-sos(icon, a='#')
-	+e.A.item(href= a target="_blank")
+	+e.A.item.default-btn-js(href=a class=icon)
 		if block
 			block
 		else
 			+icon(icon)
 //- social buttons
+
 mixin soc()
 	+b.soc
 		if block
 			block
 		else
-			+item-sos('fb')
-			+item-sos('instagram')
-			+item-sos('telegram')
+			+item-sos('tg')
+			+item-sos('vb')
+			+item-sos('wa')
 
 //- /social buttons 

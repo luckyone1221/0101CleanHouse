@@ -21,7 +21,6 @@ global.$ = {
     tabify: require('gulp-tabify'),
     envDev: false,
     gcmq: require('postcss-sort-media-queries'),
-    gp: require('gulp-load-plugins')(),
     browserSync: require('browser-sync').create(),
     postcss: require('gulp-postcss'),
     autoprefixer: require('autoprefixer'),
@@ -47,9 +46,7 @@ $.gulp.task('img', $.gulp.series('cleanimg', 'img-responsive',
 // 'img1x'
 ));
 $.gulp.task('libs', $.gulp.series('cleanlibs', 'copylibs'));
-
 $.gulp.task('default', $.gulp.series('svg', 'svgCopy',
-
     $.gulp.parallel(
         'img',
         'pug',
