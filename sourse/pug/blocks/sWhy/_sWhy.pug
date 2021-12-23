@@ -1,0 +1,35 @@
+mixin sWhy(data)
+	// start sWhy
+	+b.SECTION.sWhy.section#sWhy&attributes(attributes)
+		.container
+			+b.section-title--lined
+				h2
+					| Небезпечно довіряти роботу некопметентним людям
+				p можливі неприємні наслідки
+				//p
+					| Небезпечно довіряти роботу некопметентним людям
+					|
+					span можливі неприємні наслідки
+			+e.row.row
+				+sWhyItem('1', 'Taк і було', `Пошкодження які <span>неможливо виправити</span>`)
+				+sWhyItem('2', 'Аж блистить', `Через неякісно зроблену роботу ви витрачаєте ваші <span>гроші на вітер</span>`)
+				+sWhyItem('3', '"Тося" зробить', 'Непунктуальність та несерйозність призводить до <span>втрати часу</span>')
+				+sWhyItem('4', 'Їх розшукує поліція', 'Слід двічі подумати перед тим як пускати когось у <span>свій дім</span>')
+				//+sWhyItem('', '', '')
+				//+sWhyItem('', '', '')
+				//+sWhyItem('', '', '')
+	// end sWhy
+
+mixin sWhyItem(imgNum, title, txt)
+	.col-md-6.col-lg-3
+		+e.card
+			+e.c-row.row.align-items-center
+				.col-md-12
+					+e.img-box
+						+e.ball
+							+icon(`sWhy-${imgNum}`)
+						+pic(`sWhy-${imgNum}-good.jpg`)
+						+pic(`sWhy-${imgNum}-bad.jpg`)
+				.col-md-12
+					+e.title=title
+					+e.txt!=txt

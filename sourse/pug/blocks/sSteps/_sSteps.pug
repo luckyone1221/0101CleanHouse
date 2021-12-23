@@ -1,0 +1,25 @@
+mixin sSteps(data)
+	// start sSteps
+	+b.SECTION.sSteps.section#sSteps&attributes(attributes)
+		.container
+			+b.section-title--lined
+				h2 Як ми працюємо
+				p Всього 4 простих кроки
+			+e.row.row
+				+sWhyItem(1, 'Створення заявки', "Ви зв'язуєтесь з на нами, через контакту форму, телефонний дзвінок, чи месенджер")
+				+sWhyItem(2, 'Консультація', "Ви описуєте деталі роботи, обираєте зручний час її проведення")
+				+sWhyItem(3, 'Виконання роботи', "Майстер виконує роботу, ви її приймаєте та розраховутесь")
+				+sWhyItem(4, 'Відгук', "Ми цінуємо ваше враження, тому хочемо отримати відгук (за вашим бажанням)")
+	// end sSteps
+
+mixin sWhyItem(imgNum, title, txt)
+	.col-lg-3
+		+e.card
+			+e.c-row.row.align-items-center
+				.col-lg-12
+					+e.img-wrap
+						+e.img-box
+							+pic(`sSteps-${imgNum}.jpg`)
+				.col-lg-12.text-lg-center
+					+e.title=title
+					+e.txt!=txt
