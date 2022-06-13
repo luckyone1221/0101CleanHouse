@@ -1,29 +1,209 @@
+// start .sForm
+.sForm {
 
-	// start .sForm
-	.sForm {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	&__row{}
+	&__item{
+		//margin-bottom: rem(30);
+	}
+	&__icon{
+		width: rem(32);
+		height: rem(32);
+		//border-radius: rem(4);
+		border-radius: rem(4);
+		border: 1px solid $gray-100;
+		box-shadow: 1px 1px 8px -1px rgba($black, .25);
+		background: linear-gradient(180deg, #72CBFF 0%, #52A7D8 100%);
 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.icon{
+			font-size: rem(16);
+			color: $white;
+		}
+	}
+	&__title{
+		font-weight: 600;
+		font-size: rem(20);
+	}
+	&__link{
+		font-size: rem(18);
+	}
+	&__box{
+		padding: rem(10);
+		box-shadow: 0 8px 15px rgba(19, 21, 26, 0.1);
+		border-radius: rem(15);
+		background-color: $white;
+
+		position: relative;
+		z-index: 1;
+		&:after{
+			content: '';
+			position: absolute;
+			border-radius: inherit;
+			z-index: -1;
+
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $white;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			border-radius: inherit;
+			z-index: -1;
+
+			top: rem(10);
+			left: rem(10);
+			height: 100%;
+			width: calc(100% - #{rem(20)});
+			//background-color: red;
+			background-color: rgba($primary, .05);
+			box-shadow: 0px 8px 15px rgba(19, 21, 26, 0.1);
+		}
+	}
+
+	.form-wrap{
+		//background-color: $white;
+		border-radius: inherit;
+		border: 1px solid $gray-300;
+		padding: rem(32) rem(24);
+
+		position: relative;
+		z-index: 1;
+		&__pic{
+			position: absolute;
+			z-index: -1;
+			pointer-events: none;
+			width: rem(150);
+			transform: rotate(24deg);
+			height: auto;
+			bottom: rem(15);
+			right: rem(15);
+
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&__title{
+			@extend .h2;
+			margin-bottom: rem(30);
+
+			&:after{
+				display: block;
+				content: '';
+
+				margin: rem(12) auto 0;
+				@include media-breakpoint-up(sm){
+					margin: rem(16) auto 0;
+				}
+				width: rem(80);
+				height: rem(4);
+				background: linear-gradient(180deg, #72CBFF 0%, #52A7D8 100%);
+			}
+		}
+		&__row{
+			--bs-gutter-x: #{rem(24)};
+			--bs-gutter-y: #{rem(18)};
+		}
+		&__input-wrap{
+			textarea{
+				height: rem(120);
+				@include media-breakpoint-up(sm){
+					height: rem(160);
+				}
+			}
+		}
+		&__input-title{
+			font-weight: 600;
+			font-size: rem(14);
+			margin-bottom: rem(8);
+			display: block;
+
+		}
+		&__input{}
+		&__hint{
+			font-size: rem(13);
+			color: $gray-600;
+			margin-bottom: rem(24);
+		}
+		&__btn{
+			@extend .default-btn;
+
+			width: 100%;
+			@include media-breakpoint-up(sm){
+				//width: auto;
+				width: rem(240);
+			}
+		}
+		&__{}
+	}
+	&__{}
 } // end.sForm
+
+.g-load{
+	&__row{
+		--bs-gutter-x: #{rem(20)};
+		& > *{
+			margin-bottom: rem(20);
+		}
+	}
+	&__img{
+		@extend .accept-ratio-frame-nh;
+		padding-top: calc(83/146 * 100%);
+		border-radius: 5px;
+		margin-bottom: 18px;
+
+		&:after{
+			cursor: pointer;
+			content: '';
+			position: absolute;
+			top: 12px;
+			right: 12px;
+
+			width: 24px;
+			height: 24px;
+			padding: 0;
+			@extend .btn;
+			@extend .btn-light;
+			border-radius: 50%;
+
+			background-image: url(../img/svg/cross-xs.svg);
+			background-size: 8px;
+			&:hover{
+				background-size: 12px;
+			}
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+	&__add-btn{
+		width: 100% !important;
+		@include media-breakpoint-up(sm){
+			//width: auto!important;
+			width: rem(240) !important;
+		}
+		@include media-breakpoint-up(lg){
+			width: auto!important;
+		}
+		display: inline-block!important;
+		@extend .btn;
+		@extend .btn-outline-primary;
+
+		//color: ;
+		//border-radius: 60px;
+		padding: 8px 20px;
+
+		font-size: inherit!important;
+		color: $primary!important;
+		&:hover{
+			color: $white!important;
+		}
+	}
+
+	&__{}
+}

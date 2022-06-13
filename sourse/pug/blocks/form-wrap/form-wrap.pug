@@ -10,11 +10,11 @@ mixin input(placeholder,  t='text', label, name= t)
 		else if t== "select"
 			+e.SELECT.input.form-select( name= name)&attributes(attributes)
 				option(value= placeholder)= placeholder
-				- for (var x = 1; x < 5; x++)
+				block
+				//-- for (var x = 1; x < 5; x++)
 					option(value=` placeholder ${x}`)= `placeholder ${x}`
 		else if t=='file'
 			+e.INPUT.input.form-control(name=name type=t)&attributes(attributes)
-			
 		else if t=='number'
 			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder step='any')&attributes(attributes)
 		else if t=='date'
@@ -26,7 +26,10 @@ mixin input(placeholder,  t='text', label, name= t)
 			label
 				+e.SPAN.input-title= label
 				+t(t,placeholder, name)&attributes(attributes)
-				block
+					if t== "select"
+						block
+				if t!== "select"
+					block
 		else
 			+t(t,placeholder, name)&attributes(attributes)
 		block

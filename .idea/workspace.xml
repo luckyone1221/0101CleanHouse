@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7dd04d1-a0da-40f2-9839-f6483d71db75" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/svg/crack.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/img/svg/sprite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/svg/sprite.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/headerBlock/_headerBlock.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/headerBlock/_headerBlock.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/headerBlock/_headerBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/headerBlock/_headerBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/mixin-wrap/components/soc.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/mixin-wrap/components/soc.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/mixin-wrap/mixin-wrap.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/mixin-wrap/mixin-wrap.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/top-nav/_top-nav.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/top-nav/_top-nav.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/top-nav/_top-nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/top-nav/_top-nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/img/6049001385 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/form-wrap/form-wrap.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/form-wrap/form-wrap.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/sForm/_sForm.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/sForm/_sForm.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/sForm/_sForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/sForm/_sForm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/sSteps/_sSteps.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/sSteps/_sSteps.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourse/pug/blocks/sSteps/_sSteps.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/blocks/sSteps/_sSteps.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sourse/pug/pages/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/pug/pages/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sourse/sass/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/sass/_base.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sourse/sass/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sourse/sass/_root.scss" afterDir="false" />
@@ -51,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../0058Tisma" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -95,7 +98,10 @@
       <option name="presentableId" value="Default" />
       <updated>1640190129082</updated>
       <workItem from="1640190133585" duration="18689000" />
-      <workItem from="1640295755951" duration="3424000" />
+      <workItem from="1640295755951" duration="3707000" />
+      <workItem from="1640340115204" duration="17869000" />
+      <workItem from="1640537936007" duration="96000" />
+      <workItem from="1640543156739" duration="652000" />
     </task>
     <servers />
   </component>

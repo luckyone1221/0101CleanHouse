@@ -16,10 +16,10 @@ mixin sWhyItem(imgNum, title, txt)
 	.col-lg-3
 		+e.card
 			+e.c-row.row.align-items-center
-				.col-lg-12
+				.col-auto.col-lg-12
 					+e.img-wrap
 						+e.img-box
 							+pic(`sSteps-${imgNum}.jpg`)
-				.col-lg-12.text-lg-center
+				.col.col-lg-12.text-lg-center
 					+e.title=title
 					+e.txt!=txt

@@ -115,8 +115,7 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 $theme-colors: map-remove($theme-colors, 
-"info", 
-"light", 
+"info",
 "dark",  
 "success",
 'warning', 
@@ -637,8 +636,8 @@ $form-label-color: null !default;
 // scss-docs-end form-label-variables
 
 // scss-docs-start form-input-variables
-$input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+$input-padding-y: rem(12);
+$input-padding-x: rem(20);
 $input-font-family: $input-btn-font-family !default;
 $input-font-size: $input-btn-font-size !default;
 $input-font-weight: $font-weight-base !default;
@@ -652,7 +651,7 @@ $input-padding-y-lg: $input-btn-padding-y-lg !default;
 $input-padding-x-lg: $input-btn-padding-x-lg !default;
 $input-font-size-lg: $input-btn-font-size-lg !default;
 
-$input-bg: $body-bg !default;
+$input-bg: $gray-100;
 $input-disabled-bg: $gray-200 !default;
 $input-disabled-border-color: null !default;
 

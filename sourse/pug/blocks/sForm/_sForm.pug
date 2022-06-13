@@ -2,8 +2,66 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+			+b.section-title--lined
+				h2 Звяжітся з нами
+				p Ви можете отримати консультацію заповнивши форму, замовивши зворотній дзвінок, через соц мережі чи просто зателефонвуати.
+			+e.row.row.gy-5
+				.col-lg-4.col-xl-3
+					.row.gy-4
+						+sFormItem('tell', 'Номер телефону', "tel:+380632774550", '+380-63-277-45-50')
+						+sFormItem('mail', 'Електронна пошта', "mailto:clean_house@gmail.com", 'clean_house@gmail.com')
+						+sFormItem('clock', 'Графік роботи')
+						+sFormItem('soc', 'Соц. мережі')
+							+soc()
+				.col-lg-8.col-xl-9
+					+e.box
+						+form-wrap()
+							//-+pic('sForm-1.png')(class='form-wrap__pic')
+							+e.title.text-center Замовити миття вікон
+							+e.row.row
+								.col-md-6
+									+input('Як до вас звертатися?', 'text', "Ваше І'мя", 'name')(required)
+								.col-md-6
+									+input('+38-___-___-__-__', 'tel', "Номер телефону")(required)
+								.col-md-6
+									+input('E-mail', 'email', "Електронна пошта")
+								.col-md-6
+									+e.input-wrap.form-group
+										label
+											+e.SPAN.input-title Вид робіт
+										+e.SELECT.input.form-select(name="work-type")
+											option(value='Звичайне миття') Звичайне миття
+											option(value='Миття після ремонту') Миття після ремонту
+									//-+input('Звичайне миття', 'select', 'Вид робіт')
+								.col-md-12
+									+input("Короткий опис (не обов'язково)", 'textarea', 'Повідомлення', "message")
+								.col-md-12
+									+e.input-title Прикріпіть до 6 фотографій
+									+e.hint.hint-js Це не обовязково, проте фотографії допоможуть нам краще оцінити ситуацію
+									+galeryLoad()
+								.text-center
+									+e.btn(type="submit")
+										span Замовити майстра
+										+icon('soap')
 	// end sForm
+
+mixin galeryLoad()
+	+b.g-load
+		+e.row.row.g-load-row-js
+		| <input type="file" class="g-load-input-js invisible" accept=".jpg, .jpeg, .png" id="foto-inp" multiple/>
+		.text-center.text-lg-start
+			+e.LABEL.add-btn(for="foto-inp") Додати Фото
+
+mixin sFormItem(iconName='tell', title='Номер телефону', href, txt)
+	.col-sm-6.col-lg-12
+		+e.item
+			.row.gx-3
+				.col-auto
+					+e.icon
+						+icon(iconName)
+				.col
+					+e.title.mb-3=title
+					if block
+						block
+					else
+						+e.link(href=href)=txt

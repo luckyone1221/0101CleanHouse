@@ -130,7 +130,8 @@ const JSCCommon = {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
-		Inputmask("+9(999)999-99-99").mask(InputTel);
+		Inputmask("+38-999-999-99-99").mask(InputTel);
+		//+380
 	},
 	// /inputMask
 	ifie() {
@@ -255,7 +256,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume();
 	JSCCommon.mobileMenu();
-	// JSCCommon.inputMask();
+	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
@@ -328,7 +329,72 @@ function eventHandler() {
 	}).mouseleave(function (){
 		$(headerBlockBg).removeClass('active');
 	});
+	//-.g-load--js
+	let files = [];
+	let row = document.querySelector('.g-load-row-js');
+	let inputFile = document.querySelector('.g-load-input-js');
+	$(inputFile).change(function () {
+		for (let file of this.files){
+			files.push(file);
+		}
+		files = removeDuplicateFiles(files);
+		while (files.length > 6){
+			files.shift();
+		}
+		this.files = new FileListItems(files);
 
+		row.innerHTML = '';
+		for (let file of this.files){
+			let fileTemplate = `
+        <div class="col-6 col-md-4">
+          <div class="g-load__img file-img-js" data-file-name="${file.name}">
+            <img src="${URL.createObjectURL(file)}" alt="">
+          </div>
+        </div>
+      `;
+			row.innerHTML += fileTemplate;
+		}
+	});
+	//need this to work with FileList
+	function FileListItems (files) {
+		var b = new ClipboardEvent("").clipboardData || new DataTransfer();
+		for (var i = 0, len = files.length; i<len; i++) b.items.add(files[i])
+		return b.files
+	}
+	function removeDuplicateFiles(files){
+		let fileNames = [];
+		for (let file of files){
+			fileNames.push(file.name);
+		}
+		fileNames = [... new Set(fileNames)];
+		let filesWithouDuplicates = [];
+		for(let name of fileNames){
+			let found = false;
+
+			for (let file of files){
+				if (file.name === name && !found){
+					filesWithouDuplicates.push(file);
+					found = true;
+				}
+			}
+		}
+
+		return filesWithouDuplicates;
+	}
+	document.addEventListener('click', function (){
+		if (event.target.closest('.file-img-js')){
+			let thisImg = event.target.closest('.file-img-js');
+			let thisName = thisImg.getAttribute('data-file-name');
+			$(thisImg.parentElement).fadeOut();
+
+			for (let [index,file] of Object.entries(files)){
+				if (file.name === thisName){
+					files.splice(index, 1);
+				}
+			}
+			inputFile.files = new FileListItems(files);
+		}
+	})
 	// modal window
 
 };
